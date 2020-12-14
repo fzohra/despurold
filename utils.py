@@ -107,3 +107,10 @@ def evaluate_and_average(session, tensor, num_estimates):
   tensor_value_estimates = [session.run(tensor) for _ in range(num_estimates)]
   average_tensor_value = sum(tensor_value_estimates) / num_estimates
   return average_tensor_value
+
+def evaluate(session, tensor):
+  # for each class
+  # for each component (1-64)
+  #
+  tensor_value_estimates = session.run(tensor)
+  return tensor_value_estimates
